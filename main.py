@@ -12,7 +12,6 @@ class MYC:
         self.find_consensus(A, C, G, T, len_fasta)
         ref = self.parse_fasta(reference)
         self.prediction = self.longest_common_substring(ref, self.consensus_pattern)
-        print(f'The predicted binding site in the ref genome: {self.longest_common_substring(ref, self.consensus_pattern)}')
 
     def longest_common_substring(self, reference, pattern):
         """
@@ -41,7 +40,8 @@ class MYC:
         if max_length > 0:
             for i in range(1, max_length + 1):
                 if i == 1:
-                    print(f'The most likely binding site is at position <{i_max - max_length + i}> in the reference genome')
+                    print(
+                        f'The most likely binding site is at position <{i_max - max_length + i +1}> in the reference genome')
                 find_match = find_match + reference[i_max - max_length + i]
 
         return find_match
@@ -88,10 +88,9 @@ if __name__ == '__main__':
     reference = args.ref
     print('##############################################################################')
     out = MYC(reference, PWM()[0], PWM()[1], PWM()[2], PWM()[3], PWM()[4])
+    print(f'The predicted binding site in the ref genome: {out.prediction}')
     print(f'The original pattern to be found: {out.consensus_pattern}')
     print('##############################################################################')
     print(out.consensus_pattern)
     print('  ||||||||')
     print(f'  {out.prediction}')
-
-
