@@ -8,7 +8,7 @@ The Challenge:
 > Most likely binding site prediction from main.py 
 ```
 
-The most likely binding site is at position <19244> in the reference genome
+The most likely binding site is at position <19245> in the reference genome
 The predicted binding site in the ref genome: CCACGTGC
 The original pattern to be found: GGCCACGTGCCC
 ##############################################################################
